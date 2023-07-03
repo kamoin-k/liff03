@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>アンケート Form</h1>
-    <form id="myForm", class="w-75 mx-auto">
+    <form id="myForm" class="w-75 mx-auto">
         <label for="user_id">User ID:</label>
         <input type="text" id="user_id" name="user_id" required><br><br>
         <label for="message">Message:</label>
@@ -73,7 +73,7 @@
         // スプレッドシートのデータを更新
         function updateSpreadsheet(userId, message) {
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://script.google.com/macros/s/AKfycbzktSWhM26rl5FGSmCYPfFHD_XhHys-v73VRbS_sejX-DTlRoU-78gGzc8oYnwkP6Ft/exec', true);  // ご自身のGAS WebアプリのURLに置き換えてください
+            xhr.open('POST', 'https://script.google.com/macros/s/AKfycbzB4sUCF21xtpW7ELYBhCy2F0FQFTo_pHdflWvLofGERPR7akDndsmclKS-0nmusWVC/exec', true);  // ご自身のGAS WebアプリのURLに置き換えてください
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
             // フォームデータを送信
