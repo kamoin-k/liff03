@@ -6,8 +6,8 @@
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 </head>
 <body>
-    <h1>LIFF Form</h1>
-    <form id="myForm">
+    <h1>アンケート Form</h1>
+    <form id="myForm", class="w-75 mx-auto">
         <label for="user_id">User ID:</label>
         <input type="text" id="user_id" name="user_id" required><br><br>
         <label for="message">Message:</label>
@@ -60,9 +60,11 @@
                     text: userId + '\n' + message
                 }
             ]).then(() => {
+                // ウインドウクローズ
+               　　 liff.closeWindow();    
                 // 送信成功時にデータをリセット
-                document.getElementById('myForm').reset();
-                updateSpreadsheet(userId, message);
+                // document.getElementById('myForm').reset();
+                // updateSpreadsheet(userId, message);
             }).catch((error) => {
                 console.error('Failed to send message', error);
             });
@@ -75,7 +77,8 @@
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
             // フォームデータを送信
-            var formData = 'user_id=' + encodeURIComponent(userId) + '&message=' + encodeURIComponent(message);
+            // var formData = 'user_id=' + encodeURIComponent(userId) + '&message=' + encodeURIComponent(message);
+            var formData = encodeURIComponent(userId) + encodeURIComponent(message);
             xhr.send(formData);
         }
     </script>
