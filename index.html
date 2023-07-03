@@ -57,7 +57,7 @@
             liff.sendMessages([
                 {
                     type: 'text',
-                    text: 'User ID: ' + userId + '\nMessage: ' + message
+                    text: userId + '\n' + message
                 }
             ]).then(() => {
                 // 送信成功時にデータをリセット
@@ -71,7 +71,7 @@
         // スプレッドシートのデータを更新
         function updateSpreadsheet(userId, message) {
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://script.google.com/macros/s/Your_GAS_Web_App_URL/exec', true);  // ご自身のGAS WebアプリのURLに置き換えてください
+            xhr.open('POST', 'https://script.google.com/macros/s/AKfycbzktSWhM26rl5FGSmCYPfFHD_XhHys-v73VRbS_sejX-DTlRoU-78gGzc8oYnwkP6Ft/exec', true);  // ご自身のGAS WebアプリのURLに置き換えてください
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
             // フォームデータを送信
