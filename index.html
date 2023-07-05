@@ -12,7 +12,7 @@
         <input type="text" id="user_id" name="user_id" required><br><br>
         <label for="message">Message:</label>
         <input type="text" id="message" name="message" required><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="送信">
     </form>
 
     <script>
@@ -28,7 +28,10 @@
         initializeLiff();
 
         // フォームの送信イベントのハンドラ
-        document.getElementById('myForm').addEventListener('submit', submitForm);
+//        document.getElementById('myForm').addEventListener('submit', submitForm) ;
+        document.getElementById('myForm').addEventListener('submit', () => {
+            log.textContent = 'Form submitted!';
+  });
 
         // スプレッドシートのデータを取得し、フォームに表示
         async function displayLiffData() {
